@@ -8,7 +8,7 @@ class Key {
 class Person {
 	constructor(private key: Key){};
 
-	getKey(): unknown {
+	getKey(): Key {
 		return this.key;
 	}
 }
@@ -30,7 +30,7 @@ comeIn(tenant: Person): void{
 }
 
 class MyHouse extends House {
-openDoor(key){
+openDoor(key): void {
 	if(key.getSignature() === this.key){
 		this.door = true;
 	}
